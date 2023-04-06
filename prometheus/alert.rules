@@ -11,7 +11,7 @@ groups:
       description: "A Prometheus target has disappeared. An exporter might be crashed. VALUE = {{ $value }}  LABELS: {{ $labels }}"
 
   - alert: Low free Disk space
-    expr: (sum(node_filesystem_free_bytes) / sum(node_filesystem_size_bytes))*100 < 70
+    expr: (sum(node_filesystem_free_bytes) / sum(node_filesystem_size_bytes))*100 < 20
     for: 1m
     labels:
       severity: warning

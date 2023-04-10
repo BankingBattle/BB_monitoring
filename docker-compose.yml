@@ -6,7 +6,6 @@ services:
     image: prom/prometheus:latest
     volumes:
       - ./prometheus:/etc/prometheus/
-      - ./prometheus/data/:/prometheus/data/
     container_name: prometheus
     hostname: prometheus
     command:

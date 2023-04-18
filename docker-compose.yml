@@ -76,7 +76,7 @@ services:
     ports:
       - 4040:4040
     volumes:
-      - ../BB_back/bb_back/logs/:/mnt/nginxlogs/
+      - /var/log/nginx/:/mnt/nginxlogs/
     command: mnt/nginxlogs/access.log
     networks:
       - default

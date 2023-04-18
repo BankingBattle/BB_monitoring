@@ -71,14 +71,15 @@ services:
     networks:
       - default
 
-  nginx:
-    image: nginx:1.21.3-alpine
+  nginx-exporter:
+    image: quay.io/martinhelmich/prometheus-nginxlog-exporter:v1
     ports:
-      - "80:80"
-      - "443:443"
-
+      - 4040:4040
     volumes:
-      - ./nginx/:/etc/nginx/conf.d/
+      - ../BB_back/bb_back/logs/:/mnt/nginxlogs/
+    command: mnt/nginxlogs/access.log
+    networks:
+      - default
 
 networks:
   default:

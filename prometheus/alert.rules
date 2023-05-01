@@ -17,4 +17,13 @@ groups:
       severity: warning
     annotations:
       title: Low free space on {{ $labels.instance }}
-      description: On {{ $labels.instance }} device {{ $labels.device }} mounted on {{ $labels.mountpoint }} has low free space of {{ $value }}%
+      description: On {{ $labels.instance }} device {{ $labels.device }} mounted on {{ $labels.mountpoint }} has low free space of {{ $value }}
+  
+  - alert: Server Error
+    expr: sum(max_over_time(nginx_http_response_count_total{status =~ "5[0-9]*"}[10m]) - min_over_time(nginx_http_response_count_total{status =~ "5[0-9]*"}[10m])) < 10
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      title: Too mach error of server
+      description: On {{ $labels.instance }} device {{ $labels.device }} mounted on {{ $labels.mountpoint }} has a lot of error of server {{ $value }}

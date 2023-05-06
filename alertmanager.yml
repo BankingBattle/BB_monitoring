@@ -11,5 +11,5 @@ receivers:
   telegram_configs:
   - bot_token: '${BOT_TOKEN}'
     api_url: 'https://api.telegram.org'
-    chat_id: ${CHAT_ID}
+    chat_id: '${CHAT_ID}'
     parse_mode: 'HTML'

@@ -21,6 +21,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            BOT_TOKEN=${{ secrets.BOT_TOKEN }}
             cd /home/developer/monitoring/BB_monitoring
             docker-compose down
             git pull

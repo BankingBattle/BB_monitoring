@@ -68,6 +68,9 @@ services:
       - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
     command:
       - '--config.file=/etc/alertmanager/alertmanager.yml'
+    environment:
+      - CHAT_ID=-878675983
+      - BOT_TOKEN=${BOT_TOKEN}
     networks:
       - default
 

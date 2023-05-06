@@ -27,3 +27,12 @@ groups:
     annotations:
       title: Too mach error of server
       description: On {{ $labels.instance }} device {{ $labels.device }} mounted on {{ $labels.mountpoint }} has a lot of error of server {{ $value }}
+
+  - alert: Checking TgBot
+    expr: 1 < 2
+    for: 1m
+    labels:
+      severity: information
+    annotations:
+      title: emty
+      description: -

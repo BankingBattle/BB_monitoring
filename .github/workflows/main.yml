@@ -22,7 +22,9 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             BOT_TOKEN=${{ secrets.BOT_TOKEN }}
+            CHAT_ID=${{ secrets.CHAT_ID }}
             export BOT_TOKEN
+            export CHAT_ID
             cd /home/developer/monitoring/BB_monitoring
             docker-compose down
             git pull

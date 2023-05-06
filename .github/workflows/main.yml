@@ -26,7 +26,7 @@ jobs:
             export BOT_TOKEN
             export CHAT_ID
             cd /home/developer/monitoring/BB_monitoring
-            bash alertmanager_generator.sh
             docker-compose down
             git pull
+            bash alertmanager_generator.sh
             docker-compose up -d
